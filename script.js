@@ -54,6 +54,7 @@
 // It's really important that you have a unique ID for each todo item that you push onto the array
 // the function does not need to return anything
 let todoItems = [];
+let nextTodoId = 0;
 
 function addToDoItem(text) {
   if (typeof text !== 'string') {
@@ -61,11 +62,12 @@ function addToDoItem(text) {
     return;
   }
   const newTodo = {
-    id: todoItems.length,
+    id: nextTodoId,
     text: text,
     completed: false
   };
   todoItems.push(newTodo);
+  nextTodoId++;
 }
 
 // Function to remove a todo to the list
